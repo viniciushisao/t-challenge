@@ -5,6 +5,9 @@ import model.Session;
 import model.Talk;
 import model.Track;
 
+import java.io.*;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -15,6 +18,7 @@ import static model.Session.MORNING;
  */
 public abstract class GeneralUtil {
 
+    private static final String PATH_TO_RESOURCES = "././test/res/";
 
     /**
      * @param desiredTime the time used to match on taks
@@ -104,7 +108,63 @@ public abstract class GeneralUtil {
                 }
             }
         }
-
     }
 
+    /**
+     * @return a list of paths of all files in resource folder in tests.
+     * It may return an empty arraylist but never null
+     */
+    public static ArrayList<String> getAllFilesInResFolder() {
+        Path path = Paths.get(PATH_TO_RESOURCES);
+
+        ArrayList<String> paths = new ArrayList<>();
+
+        try {
+            Files.walkFileTree(path, new SimpleFileVisitor<Path>() {
+                @Override
+                public FileVisitResult visitFile(Path oneF, BasicFileAttributes attrs) throws IOException {
+                    if (Files.exists(oneF)) {
+                        paths.add(oneF.toString());
+                    }
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println();
+        return paths;
+    }
+
+    /**
+     * Open a file and return all the lines in String format
+     *
+     * @param fileUri
+     * @return may return an ArrayList empty but never null
+     */
+    public static ArrayList<String> getLinesOfFile(String fileUri) {
+
+        ArrayList<String> result = new ArrayList<>();
+
+        File file = new File(fileUri);
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            String text;
+            while ((text = reader.readLine()) != null) {
+                result.add(text);
+            }
+        } catch (IOException e) {
+            result.clear();
+            e.printStackTrace();
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException ignored) {
+            }
+        }
+        return result;
+    }
 }

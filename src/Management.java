@@ -2,6 +2,7 @@ import model.ArrangeResult;
 import model.Session;
 import model.Talk;
 import model.Track;
+import util.GeneralUtil;
 
 import java.util.ArrayList;
 
@@ -11,7 +12,15 @@ import java.util.ArrayList;
 public abstract class Management {
 
 
+    /**
+     *
+     * @param talks
+     * @param ammountOfTracks
+     * @return
+     */
     public static ArrangeResult arrange(ArrayList<Talk> talks, int ammountOfTracks) {
+
+        GeneralUtil.orderTalks(talks);
 
         ArrayList<Track> tracks = new ArrayList<>();
 

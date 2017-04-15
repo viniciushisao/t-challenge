@@ -18,7 +18,7 @@ public abstract class TestUtil {
     public static ArrayList<Talk> getTalksDefault() {
         return new ArrayList<>(Arrays.asList(
                 new Talk(60, "Writing Fast Tests Against Enterprise Rails"),
-                new Talk(30, "Overdoing it in Python"),
+                new Talk(45, "Overdoing it in Python"),
                 new Talk(30, "Lua for the Masses"),
                 new Talk(45, "Ruby Errors from Mismatched Gem Versions"),
                 new Talk(45, "Common Ruby Errors"),

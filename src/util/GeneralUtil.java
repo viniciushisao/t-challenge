@@ -5,10 +5,14 @@ import model.Session;
 import model.Talk;
 import model.Track;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 
 import static model.Session.MORNING;
@@ -108,6 +112,15 @@ public abstract class GeneralUtil {
                 }
             }
         }
+
+        System.out.println("FINAL REPORT\n");
+        for (Track track : arrangeResult.tracks){
+            System.out.println("TRACK: " + track.getTrackName());
+            for (Session session : track.getSessions()){
+                System.out.println("SESSION: " + session.getSessionType().getIdentifierString() + " VALID: " + session.isValid());
+            }
+        }
+        System.out.println("NOT INCLUDED TALKS: " + arrangeResult.notAllocatedTalks.size());
     }
 
     /**
@@ -166,5 +179,14 @@ public abstract class GeneralUtil {
             }
         }
         return result;
+    }
+
+    /**
+     * Order talks from bigger to smaller.
+     *
+     * @param talks
+     */
+    public static void orderTalks(ArrayList<Talk> talks) {
+        Collections.sort(talks, (t1, t2) -> t2.getDuration() - t1.getDuration());
     }
 }

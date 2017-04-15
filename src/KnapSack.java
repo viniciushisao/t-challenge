@@ -9,11 +9,10 @@ import java.util.ArrayList;
  */
 public abstract class KnapSack {
 
-
     /**
-     * This is a basic solution for KnapSack algorithm
+     * This is a basic solution for KnapSack algorithm.
      *
-     * @param talks      all talks
+     * @param talks      all talks in descending order! You can use a methog on GeneralUtil called orderTalks
      * @param timeAmount the amount of time available
      * @return
      */
@@ -44,8 +43,6 @@ public abstract class KnapSack {
 //            }
 //            System.out.println();
 //        }
-//        System.out.println("----------------------------------------------");
-//
 
         //mounting the solution
         ArrayList<Talk> talkArrayListSolution = new ArrayList<>();

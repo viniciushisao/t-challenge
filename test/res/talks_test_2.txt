@@ -7,7 +7,6 @@ Rails for Python Developers lightning
 Communicating Over Distance 60min
 Accounting-Driven Development 45min
 Woah 30min
-
 Sit Down and Write 30min
 Pair Programming vs Noise 45min
 Rails Magic 60min
@@ -18,3 +17,9 @@ Ruby vs. Clojure for Back-End Development 30min
 Ruby on Rails Legacy App Maintenance 60min
 A World Without HackerNews 30min
 User Interface CSS in Rails Apps 30min
+Test one 30min
+Test two 20min
+Test three 12min
+Test four 04min
+Test five 90min
+Test six 18min

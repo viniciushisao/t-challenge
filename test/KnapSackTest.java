@@ -1,5 +1,6 @@
 import model.Talk;
 import org.junit.Test;
+import util.GeneralUtil;
 
 import java.util.ArrayList;
 
@@ -12,6 +13,8 @@ public class KnapSackTest {
     public void test_solution() {
 
         ArrayList<Talk> input = TestUtil.getTalksDefault();
+
+        GeneralUtil.orderTalks(input);
 
         ArrayList<Talk> result = KnapSack.solution(input, 60*3);
         TestUtil.print(result);

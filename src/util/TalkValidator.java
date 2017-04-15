@@ -2,15 +2,15 @@ package util;
 
 import model.Talk;
 
-import java.util.Arrays;
-
 /**
  * Created by viniciushisao on 15/04/17.
  */
 public abstract class TalkValidator {
 
     private static final String LIGHTNING = "lightning";
-    private static final String MINS = "mins";
+    private static final String LIGHTNING_TIME = "15";
+    private static final String MIN = "min";
+
 
     /**
      * Rules:
@@ -28,12 +28,12 @@ public abstract class TalkValidator {
         String minutes = str.replaceAll("[^0-9]+", " ").trim();
         String title = null;
         if (minutes.length() > 0) {
-            title = str.replace(minutes + MINS, "").trim();
-        }else{
+            title = str.replace(minutes + MIN, "").trim();
+        } else {
             //is it lightning?
-            if (str.indexOf(LIGHTNING) > 0){
+            if (str.indexOf(LIGHTNING) > 0) {
                 title = str.replace(LIGHTNING, "").trim();
-                minutes = "60";
+                minutes = LIGHTNING_TIME;
             }
         }
 

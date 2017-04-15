@@ -1,3 +1,4 @@
+import model.ArrangeResult;
 import model.Talk;
 
 import java.util.ArrayList;
@@ -6,6 +7,7 @@ import java.util.Arrays;
 /**
  * Created by vinicius on 14/04/17.
  */
+
 public abstract class TestUtil {
 
     public final static String LINE_DIVIDER = "-----------------------------------";
@@ -46,4 +48,5 @@ public abstract class TestUtil {
         System.out.println("Total : " + totalTime);
         System.out.println(LINE_DIVIDER);
     }
+
 }

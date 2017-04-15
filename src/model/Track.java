@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 /**
- * Created by vinicius on 13/04/17.
+ * Created by vinicius on 14/04/17.
  */
 public class Track {
 
@@ -22,11 +22,15 @@ public class Track {
         str.append("Track " + trackName + '\n');
 
         for (Session session : sessions) {
-            str.append(session.getSessionType().getIdentifier() +":" + '\n');
+            str.append(session.getSessionType().getIdentifierString() + ":" + '\n');
             str.append(session.toString());
         }
 
         return str.toString();
+    }
+
+    public String getTrackName() {
+        return this.trackName;
     }
 
     public ArrayList<Session> getSessions() {

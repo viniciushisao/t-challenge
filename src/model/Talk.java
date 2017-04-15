@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Created by vinicius on 05/04/17.
+ * Created by vinicius on 14/04/17.
  */
 public class Talk {
 

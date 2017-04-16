@@ -114,13 +114,16 @@ public abstract class GeneralUtil {
         }
 
         System.out.println("FINAL REPORT\n");
-        for (Track track : arrangeResult.tracks){
+        for (Track track : arrangeResult.tracks) {
             System.out.println("TRACK: " + track.getTrackName());
-            for (Session session : track.getSessions()){
-                System.out.println("SESSION: " + session.getSessionType().getIdentifierString() + " VALID: " + session.isValid());
+            for (Session session : track.getSessions()) {
+                System.out.println("SESSION: " + session.getSessionType().getIdentifierString() + " VALID: " + getYesOrNo(session.isValid()));
             }
         }
         System.out.println("NOT INCLUDED TALKS: " + arrangeResult.notAllocatedTalks.size());
+        System.out.println("GENERAL OVERVIEW. PASSED: " + getYesOrNo(arrangeResult.isResultValid()));
+
+        System.out.println("\n***************************************************************************** \n");
     }
 
     /**
@@ -188,5 +191,12 @@ public abstract class GeneralUtil {
      */
     public static void orderTalks(ArrayList<Talk> talks) {
         Collections.sort(talks, (t1, t2) -> t2.getDuration() - t1.getDuration());
+    }
+
+    private static String getYesOrNo(Boolean input) {
+        if (input) {
+            return "Yes";
+        }
+        return "No";
     }
 }

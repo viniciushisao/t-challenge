@@ -2,7 +2,7 @@
 
 ## About this file
 
-This file has formatting text called GitHub Flavored Markdown.
+If you are reading outside Github, this file has formatting text called *GitHub Flavored Markdown*.
 You can read it without any tool but for better visualization you can use some viewer for Markdown. 
 
 I personally never used a Markdown viewer, but I found some interesting [here](http://mashable.com/2013/06/24/markdown-tools/#W7HNkkc1AZqV)
@@ -23,7 +23,8 @@ This project is a test project I developed based on **Problem Two: Conference Tr
 1. Before run just be sure you have Java 8 installed
     1. On terminal, execute ```java -version```
     1. I didn`t make tests but I am almost sure it will execute on Java 7 too.
-1. I am running all commands in MacOs. If you are using another OS commands may differ a little.
+1. I am running all commands in MacOs. If you are using another OS commands may differ a little. Also you
+may need set some environment variables to run.
 
 ### Via Command line
 
@@ -41,15 +42,33 @@ This project is a test project I developed based on **Problem Two: Conference Tr
 
 1. Download and install IntelliJ
 1. Open IntelliJ and open the base folder of the project.
+1. Run ```src/Main.java``` (right button on the file)
+    1. It will run ```/test/res/talks_test_1.txt``` and the output will be shown on Terminal inside IntelliJ
 
-## Running the tests
+## Application tests
 
-This project has a lot of tests :D
+This project has a lot of tests, all of those are made using JUnit4. You can check then under ```/test``` folder. They are pretty much self explanatory.
+
+### Running tests with IntelliJ
+
+Tests are under ```/test``` folder. Select this folder, right button and select *Run all tests*
+
+## Architecture
+
+How application works, step by step.
+
+1. Read the file containing all talks
+1. Validate talks
+1. Create Tracks, sessions and talks objects.
+1. For every *morning* session, try to fill session time with KnapSack algorithm
+1. For every *evening* session, try to fill session time with KnapSack algorithm
+1. Print it.
 
 ## Things to think better
 
 1. I am using a sort of KnapSack problem solving algorithm. Is Bin Packing better?
 1. All the times I am generating the KnapSack matrix.
+1. Maybe a tutorial on how running tests in command line?
 
 ## More References
 

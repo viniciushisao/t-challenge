@@ -15,27 +15,14 @@ public class ManagementTest {
     @Test
     public void arrange() throws Exception {
 
+        //must work gracefully. the amount of tracks is ideal
         ArrangeResult arrangeResult = Management.arrange(TestUtil.getTalksDefault(), 2);
+        assert(arrangeResult.isResultValid());
 
-        //test if all sessions are good
-        for(Track track : arrangeResult.tracks){
-            for (Session session : track.getSessions()){
-                assertTrue(session.isValid());
-            }
-        }
+        //must fail
+        arrangeResult = Management.arrange(TestUtil.getTalksDefault(), 3);
+        assert(!arrangeResult.isResultValid());
 
-        //test if there is no talks which are not allocated
-        assertEquals(arrangeResult.notAllocatedTalks.size(), 0);
-
-        //printing
-//        for (Track track : arrangeResult.tracks) {
-//            System.out.println(track.toString());
-//        }
-
-        GeneralUtil.print(arrangeResult);
-
-        System.out.println("Not allocated talks");
-        TestUtil.print(arrangeResult.notAllocatedTalks);
     }
 
 }

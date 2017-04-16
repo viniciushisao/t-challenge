@@ -1,9 +1,8 @@
 package util;
 
 import org.junit.Test;
-import util.GeneralUtil;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by vinicius on 14/04/17.
@@ -35,7 +34,7 @@ public class GeneralUtilTest {
         assertEquals(GeneralUtil.getTimeInAMPM(0), "12:00AM");
         assertEquals(GeneralUtil.getTimeInAMPM(30), "12:30AM");
         assertEquals(GeneralUtil.getTimeInAMPM(60), "01:00AM");
-        assertEquals(GeneralUtil.getTimeInAMPM(60*14), "02:00PM");
+        assertEquals(GeneralUtil.getTimeInAMPM(60 * 14), "02:00PM");
     }
 
 

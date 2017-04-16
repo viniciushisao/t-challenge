@@ -41,7 +41,7 @@ public class Session {
             return this.identifier;
         }
 
-        public int getStart(){
+        public int getStart() {
             return this.start;
         }
 
@@ -130,7 +130,7 @@ public class Session {
         return str.toString();
     }
 
-    public ArrayList<Talk> getTalks(){
+    public ArrayList<Talk> getTalks() {
         return talks;
     }
 }

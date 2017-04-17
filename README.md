@@ -32,10 +32,11 @@ may need set some environment variables to run.
 1. Go to ```/src``` folder
 1. Execute ```javac -sourcepath . -d ./build/ *.java```
     1. This will compile all java classes and move then to ```./build``` folder
-1. Go to ```/build``` folder
+1. Go to ```./build``` folder 
 1. Execute ```java Main ../../test/res/talks_test_1.txt```
     1. This will execute the main class with file ```talks_test_1.txt```
-    1. The file above has the data provided for this.
+    1. The file above has the data provided for this test.
+    1. Change ```../../test/res/talks_test_1.txt``` to your own file. Or edit to meet your test.
 1. At the end of the output you will see a final report, where you can check if entrance worked or not.
 
 ### Via IntelliJ
@@ -63,6 +64,23 @@ How application works, step by step.
 1. For every *morning* session, try to fill session time with KnapSack algorithm
 1. For every *evening* session, try to fill session time with KnapSack algorithm
 1. Print it.
+
+### Folders organization
+
+```src``` *The main source of this application*
+
+```src\model``` *Models of the application*
+
+```src\util``` *Util* 
+
+```test``` *Main tests folder*
+
+```test\res``` *Text files of possible inputs tests*
+
+```test\util``` *Tests util*
+
+
+
 
 ## Things to think better
 

@@ -87,6 +87,10 @@ How application works, step by step.
 1. I am using a sort of KnapSack problem solving algorithm. Is Bin Packing better?
 1. All the times I am generating the KnapSack matrix.
 1. Maybe a tutorial on how running tests in command line?
+1. The problem says *No talk title has numbers in it.* but in the output result it has numbers. Anyway, I followed the
+the output but this is an easy fix.
+1. The problem says *The networking event can start no earlier than 4:00 and no later than 5:00* but in the output in the
+track 2 people will be doing nothing from 4:15pm to 5pm. Mine I got networking events right after the last talk.
 
 ## More References
 

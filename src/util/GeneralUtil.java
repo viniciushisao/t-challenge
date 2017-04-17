@@ -108,6 +108,7 @@ public abstract class GeneralUtil {
                 if (session.getSessionType().getIdentifier() == MORNING) {
                     System.out.println(getTimeInAMPM(time) + " Lunch");
                 } else {
+                    System.out.println(getTimeInAMPM(time) + " Network Eventing");
                     System.out.println();
                 }
             }

@@ -26,13 +26,15 @@ public abstract class TalkValidator {
 
         str = str.trim();
         String minutes = str.replaceAll("[^0-9]+", " ").trim();
-        String title = null;
+        String title = str;
+
+        // If you need to remove the time from string, uncomment this code
         if (minutes.length() > 0) {
-            title = str.replace(minutes + MIN, "").trim();
+            //title = str.replace(minutes + MIN, "").trim();
         } else {
             //is it lightning?
             if (str.indexOf(LIGHTNING) > 0) {
-                title = str.replace(LIGHTNING, "").trim();
+              //  title = str.replace(LIGHTNING, "").trim();
                 minutes = LIGHTNING_TIME;
             }
         }
